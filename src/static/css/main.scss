@@ -6,6 +6,13 @@ body {
     color: #656565;
 }
 
+.container {
+    max-width: 1870px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .rate-star {
     display: inline-block;
     font-size: 0;
@@ -451,4 +458,297 @@ body {
     @media(min-width: 768px) {
         margin-bottom: 0;
     }
+}
+
+.subscription {
+    background: rgba(255, 231, 107, 0.94);
+    padding: 23px 15px 26px;
+
+    .inp-wrap {
+        width: 100%;
+        position: relative;
+        margin-bottom: 26px;
+        @media(min-width: 768px) {
+            margin-bottom: 0;
+            margin-right: 30px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background: url("../img/mail.png") no-repeat center;
+        }
+    }
+}
+
+.subscription__article,
+.subscription__title {
+    text-align: center;
+}
+
+.subscription__title {
+    font-size: 24px;
+    color: #D41367;
+    margin-bottom: 10px;
+    margin-bottom: 18px;
+    @media(min-width: 768px) {
+        font-size: 36px;
+    }
+}
+
+.subscription__article {
+    color: #333333;
+    font-size: 15px;
+    margin-bottom: 18px;
+    @media(min-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.subscription__item {
+    max-width: 790px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inp {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #EEF2F7;
+    border-radius: 5px;
+    padding-left: 54px;
+    color: #9299A2;
+    font-size: 20px;
+}
+
+.subscription__btn {
+    width: 100%;
+    height: 50px;
+    color: white;
+    border: none;
+    background: #D41367;
+    box-shadow: 0 0 10px #D41367;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.subscription__inner {
+    margin-bottom: 20px;
+    @media(min-width: 768px) {
+        margin-bottom: 38px;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+    }
+}
+
+.check-custom {
+    input {
+        display: none;
+    }
+
+    input+label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        color: #656565;
+        font-size: 12px;
+        @media(min-width: 768px) {
+            font-size: 16px;
+        }
+
+        a {
+            color: #656565;
+            display: inline-block;
+            @media(min-width: 768px) {
+                border-bottom: 1px dotted #656565;
+            }
+
+            &:hover {
+                border-bottom: 1px dotted transparent;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            transform: translateY(-50%);
+            background: white;
+            z-index: 1;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: url("../img/check.png") no-repeat center;
+            z-index: 10;
+            display: none;
+        }
+    }
+
+    input:checked+label {
+        &:before {
+            display: block;
+        }
+    }
+}
+
+.check-custom_form {
+    @media(min-width: 768px) {
+        text-align: center;
+    }
+}
+
+.sentence {
+    background: #D1FFE9;
+    padding: 28px 0;
+}
+
+.sentence__title {
+    text-align: center;
+    color: #D41367;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.product {
+    &__item {
+        width: 282px;
+        background: #FFFFFF;
+        border-radius: 5px;
+        padding: 12px 20px;
+    }
+}
+
+.product__img {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.product__title {
+    text-align: center;
+    margin-bottom: 13px;
+
+    span {
+        font-size: 18px;
+        display: inline-block;
+        padding: 5px 10px;
+        background: #FFF4BC;
+        color: #333333;
+    }
+}
+
+.product__amount,
+.product__term {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.product__counter {
+    width: 140px;
+    height: 35px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    border-right: 1px solid #DCE5E5;
+    border-left: 1px solid #DCE5E5;
+
+    i {
+        font-family: "LetoSans-Bold";
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 18px;
+    }
+}
+
+.switch__button {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    font-size: 0px;
+    cursor: pointer;
+}
+
+.switch__button_plus {
+    background: url("../img/plus.png") no-repeat center;
+}
+
+.switch__button_minus {
+    background: url("../img/minus.png") no-repeat center;
+}
+
+.product__list {
+    li {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #E5E5E5;
+        color: #333333;
+        &:last-child{
+            margin-bottom: 17px;
+        }
+
+        span {
+            &:nth-child(2) {
+                font-family: "LetoSans-Bold";
+            }
+        }
+    }
+}
+
+.product__payment {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+    li {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.product__btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    background: #FFDD2D;
+    border-radius: 5px;
+    color: #333333;
 }
