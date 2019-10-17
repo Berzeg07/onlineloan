@@ -3,7 +3,7 @@
         .sentence__title Для получения микрозайма выберите МФО из списка ниже:
 
         .product
-            .swiper-container
+            .product__slider.swiper-container
                 .swiper-wrapper
                     .swiper-slide
                         .product__item
@@ -789,6 +789,251 @@
                 .swiper-button-next
                 .swiper-button-prev
                 .swiper-pagination
+
+.microloans-moskow
+    .container
+        h2.main-title Микрозаймы срочно в Москве
+        .microloans-moskow__article
+            p В РФ микрофинансовые организации, выдающие населению займы круглосуточно онлайн, появились приблизительно в середине девяностых годов прошлого столетия. До принятия в 2011 г. властями Закона «О микрофинансовой деятельности и микрофинансовых организациях» деятельность этих компаний не регулировалась. В 2015 г в силу вступили поправки в закон, на основании положений которого с 29.03.2017 все компании такого типа делились на 2 типа: микрокредитные (МКК) и микрофинансовые (МФК). Рейтинг данных организаций с каждым годом растет, потому что увеличивается число желающих 
+                a(href="#") получить online-займ. 
+        
+        .microloans-slider.swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/atm.png")
+                        a(href="#") Займ на карту        
+                
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/cash.png")
+                        a(href="#") Наличными
+                        
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/mobile-phone.png")
+                        a(href="#") На номер телефона
+                        
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/maestro.png")
+                        a(href="#") На карту Маэстро
+                        
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/ym.png")
+                        a(href="#") На Яндекс деньги
+                        
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/mir.png")
+                        a(href="#") На карту Мир
+                        
+                .swiper-slide
+                    .microloans-slider__item
+                        .microloans-slider__img
+                            img(src="img/logo-sber.png")
+                        a(href="#") На карту Сбербанка     
+
+            .swiper-button-next
+            .swiper-button-prev
+                
+        .requirements
+            h2.main-title Требования к заемщикам
+            .requirements__inner
+                .requirements__item
+                    .requirements__img
+                        img(src="img/team.png")
+                    ul.requirements__list
+                        li Возраст – от 18 лет<br> и не старше 75
+                        li Займ денег онлайн доступен только для лиц обозначенного возраста        
+                
+                .requirements__item.requirements__item_church
+                    .requirements__img
+                        img(src="img/church.png")
+                    ul.requirements__list
+                        li Заемщик – гражданин<br> Российской Федерации
+                        li Микрозайм онлайн срочно выдается только гражданам России 
+                
+                .requirements__item
+                    .requirements__img
+                        img(src="img/password.png")
+                    ul.requirements__list
+                        li Зарегистрированный<br> аккаунт
+                        li Клиент должен зарегистрировать личный кабинет на сайте выбранной МФО 
+            
+            .about-microloans
+                p Займы представляют собой денежные кредиты, которые оформляются через интернет круглосуточно.<br> Данный вид кредитования является относительно новым в нашей стране, хотя 
+                    a(href="#") онлайн займы  
+                    | по всей России уже стали популярными у населения. 
+                p 
+                    a(href="#") Микрозаймы онлайн 
+                    |предоставляются клиентам взаймы на неотложные потребности многими финансовыми организациями. Каждая из них предлагает свои особенные программы, отличающиеся по условиям, кредитным ставкам, требованиям погашения. При помощи нашего сервиса онлайн получить займ без отказа могут все желающие, заполнив заявку на нашем сайте. Здесь представлен список доступных кредитных организаций. Каталог постоянно пополняется новыми предложениями.
+            
+        .table-microloans
+            table
+                thead.thead-mob
+                    tr
+                        td
+                            |Список банков
+                thead.thead-desctop
+                    tr
+                        td Наименование 
+                        td Сумма займа
+                        td Срок займа
+                        td Процентная ставка
+                        td Сколько нужно вернуть
+                tbody
+                    tr
+                        td 
+                            .table-bank
+                                .table-bank__img
+                                    img(src="img/tin.png")
+                                span Тинькофф банк
+                        td 
+                            span.table-condition 
+                                b Сумма займа 
+                                |(2000-30 000 руб.)    
+                            .product__amount 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 10000
+                                    span руб.    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-condition
+                                b Срок займа: 
+                                |(7-30 дней)
+                            .product__term 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 7
+                                    span дней    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-rate 0,76% – 1,5% в день
+                        td
+                            .table-flex
+                                span К возврату: 
+                                    i.table-sum 10700 
+                                    |руб.
+                                .table-article__mob Рассчитано по ставке: 
+                                    b 1% в день
+                                a(href="#").table-btn Получить деньги                
+                    tr
+                        td 
+                            .table-bank
+                                .table-bank__img
+                                    img(src="img/rst.png")
+                                span Банк Русский стандарт
+                        td 
+                            span.table-condition 
+                                b Сумма займа 
+                                |(2000-30 000 руб.)    
+                            .product__amount 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 10000
+                                    span руб.    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-condition
+                                b Срок займа: 
+                                |(7-30 дней)
+                            .product__term 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 7
+                                    span дней    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-rate 0,76% – 1,5% в день
+                        td
+                            .table-flex
+                                span К возврату: 
+                                    i.table-sum 10700 
+                                    |руб.
+                                .table-article__mob Рассчитано по ставке: 
+                                    b 1% в день
+                                a(href="#").table-btn Получить деньги                                
+                    tr
+                        td 
+                            .table-bank
+                                .table-bank__img
+                                    img(src="img/alfa.png")
+                                span Альфа банк
+                        td 
+                            span.table-condition 
+                                b Сумма займа 
+                                |(2000-30 000 руб.)    
+                            .product__amount 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 10000
+                                    span руб.    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-condition
+                                b Срок займа: 
+                                |(7-30 дней)
+                            .product__term 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 7
+                                    span дней    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-rate 0,76% – 1,5% в день
+                        td
+                            .table-flex
+                                span К возврату: 
+                                    i.table-sum 10700 
+                                    |руб.
+                                .table-article__mob Рассчитано по ставке: 
+                                    b 1% в день
+                                a(href="#").table-btn Получить деньги                                
+                    tr
+                        td 
+                            .table-bank
+                                .table-bank__img
+                                    img(src="img/sov.png")
+                                span Карта рассрочки Совесть
+                        td 
+                            span.table-condition 
+                                b Сумма займа 
+                                |(2000-30 000 руб.)    
+                            .product__amount 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 10000
+                                    span руб.    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-condition
+                                b Срок займа: 
+                                |(7-30 дней)
+                            .product__term 
+                                span.switch__button.switch__button_minus -
+                                .product__counter
+                                    i 7
+                                    span дней    
+                                span.switch__button.switch__button_plus +
+                        td
+                            span.table-rate 0,76% – 1,5% в день
+                        td
+                            .table-flex
+                                span К возврату: 
+                                    i.table-sum 10700 
+                                    |руб.
+                                .table-article__mob Рассчитано по ставке: 
+                                    b 1% в день
+                                a(href="#").table-btn Получить деньги                                
 
 .subscription
     form(action="#")
