@@ -1,5 +1,39 @@
 $(document).ready(function() {
 
+    // custom select *
+    $('.select-custom select').select2();
+
+    var elem = document.querySelector('.js-range');
+    var init = new Powerange(elem, {
+        min: 10000,
+        max: 100000,
+        start: 45000,
+        step: 1000
+    });
+
+    var elemDay = document.querySelector('.day-range');
+    var init = new Powerange(elemDay, {
+        min: 1,
+        max: 735,
+        start: 735,
+        step: 1
+    });
+
+    function displayValue() {
+        $('.calc-sum__inp').val(elem.value);
+        $('.calc-day__inp').val(elemDay.value);
+
+    }
+
+    elem.onchange = function() {
+        $('.calc-sum__inp').val(elem.value);
+    };
+    elemDay.onchange = function() {
+        $('.calc-day__inp').val(elemDay.value);
+    };
+
+    displayValue();
+
     $(".switch__button").on("click", function() {
         var $button = $(this);
         var element = $button.parent().find(".product__counter");
@@ -145,6 +179,49 @@ $(document).ready(function() {
             el: '.swiper-pagination',
             clickable: true,
         },
+    });
+
+    loanterm = new Swiper('.loanterm-slider', {
+        slidesPerView: 7,
+        spaceBetween: 30,
+        loop: true,
+        breakpoints: {
+            320: {
+                slidesPerView: 1
+            },
+            499: {
+                slidesPerView: 1
+            },
+            500: {
+                slidesPerView: 2
+            },
+            767: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            },
+            1279: {
+                slidesPerView: 3
+            },
+            1280: {
+                slidesPerView: 4
+            },
+            1599: {
+                slidesPerView: 4
+            },
+            1600: {
+                slidesPerView: 5
+            },
+            1800: {
+                slidesPerView: 5
+            }
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
     });
 
 });
