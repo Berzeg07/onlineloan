@@ -2467,6 +2467,7 @@ p {
     position: relative;
     @media(min-width: 992px) {
         background: #D41367;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
     }
 
     &__mob {
@@ -2740,6 +2741,7 @@ p {
     transform: translateY(-50%);
     cursor: pointer;
     transition: 0.5s;
+    z-index: 20;
 
     span {
         display: block;
@@ -2806,7 +2808,8 @@ p {
         display: inline-block;
         font-size: 16px;
         border-bottom: 1px dotted transparent;
-        &:hover{
+
+        &:hover {
             border-bottom: 1px dotted #D41367;
             color: #D41367;
         }
@@ -2964,5 +2967,277 @@ p {
     &:after {
         height: 15px;
         background: url("../img/korona-icon.png") no-repeat center;
+    }
+}
+
+.banner-slider__calc {
+    max-width: 1256px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 20px 30px;
+    position: relative;
+    z-index: 10;
+    @media(max-width: 767px) {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 9px;
+            top: -151px;
+            width: 200px;
+            height: 146px;
+            background: url("../img/bg-money.png") no-repeat center;
+            background-size: contain;
+        }
+    }
+    @media(max-width: 991px) {
+        border: 5px solid #FFF299;
+        padding: 14px 16px;
+    }
+    @media(min-width: 992px) {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .banner__btn,
+        .calc-loan {
+            width: 33%;
+        }
+
+        .calc-loan {
+            margin-right: 29px;
+        }
+    }
+}
+
+.banner-slider__item {
+    padding: 19px 16px;
+    position: relative;
+    @media(min-width: 768px) {
+        padding: 19px 46px 40px;
+    }
+    @media(min-width: 1600px) {
+        padding: 19px 46px 50px 150px;
+    }
+}
+
+.banner__btn {
+    display: block;
+    width: 240px;
+    height: 66px;
+    margin: 21px auto 0;
+    border-radius: 50px;
+    line-height: 66px;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    background: #FFDD2D;
+    box-shadow: 0 4px 4px #D3BF01;
+    @media(min-width: 375px) {
+        width: 280px;
+        font-size: 22px;
+    }
+    @media(min-width: 768px) {
+        width: 310px;
+    }
+    @media(min-width: 992px) {
+        height: 76px;
+        line-height: 76px;
+        border-radius: 5px;
+    }
+}
+
+.banner-slider__top {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+    @media(max-width: 767px) {
+        margin-bottom: 115px;
+    }
+}
+
+.banner-slider__age {
+    font-family: "LetoSans-Thin";
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    border-radius: 100%;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    @media(min-width: 768px) {
+        font-size: 28px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.banner-slider__title {
+    font-family: "LetoSans-Thin";
+    font-size: 20px;
+    color: white;
+    max-width: 940px;
+    width: 100%;
+    @media(min-width: 375px) {
+        font-size: 22px;
+    }
+    @media(min-width: 992px) {
+        font-size: 46px;
+    }
+}
+
+.banner-slider {
+    background: #7BD380;
+    @media(max-width: 767px) {
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background: white;
+            z-index: 0;
+        }
+    }
+    @media(min-width: 1500px) {
+        background: #7BD380 url("../img/bg-money.png") no-repeat bottom right;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        @media(max-width: 767px) {
+            top: 28%;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.37);
+        @media(max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        background: white;
+    }
+
+    .swiper-button-next {
+        background: url("../img/arrow-right-w.png") no-repeat center;
+    }
+
+    .swiper-button-prev {
+        background: url("../img/arrow-left-w.png") no-repeat center;
+    }
+}
+
+.statistic {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.statistic__top {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .main-title,
+    .statistic__social {
+        margin-bottom: 25px;
+    }
+}
+
+.statistic__list {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    li {
+        margin-bottom: 50px;
+    }
+
+    a {
+        display: inline-block;
+        font-size: 18px;
+        color: #333333;
+        border-bottom: 1px dotted #333333;
+        margin-left: 71px;
+        position: relative;
+
+        &:hover {
+            border-bottom: 1px dotted transparent;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: -71px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 10em;
+        }
+    }
+}
+
+.statistic__btn {
+    display: block;
+    width: 232px;
+    height: 45px;
+    line-height: 45px;
+    background: #47D31A;
+    box-shadow: 0 4px 4px #2CAE03;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.statistic__card {
+    &:after {
+        background: #F5F5F6 url("../img/credit-big.png") no-repeat center;
+    }
+}
+
+.statistic__qiwi {
+    &:after {
+        background: #F5F5F6 url("../img/qiwi-big.png") no-repeat center;
+    }
+}
+
+.statistic__sber {
+    &:after {
+        background: #F5F5F6 url("../img/sberbank-icon.png") no-repeat center;
+    }
+}
+
+.statistic__ym {
+    &:after {
+        background: #F5F5F6 url("../img/ym-big.png") no-repeat center;
+    }
+}
+
+.statistic__maestro {
+    &:after {
+        background: #F5F5F6 url("../img/maestro-big.png") no-repeat center;
     }
 }

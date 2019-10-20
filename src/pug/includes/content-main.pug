@@ -1,3 +1,66 @@
+.banner
+    .banner-slider.swiper-container
+        .swiper-wrapper
+            .swiper-slide
+                .banner-slider__item
+                    .banner-slider__top
+                        .banner-slider__title Оформите микрозайм онлайн за 5 минут с гарантией одобрения до 97%
+                        .banner-slider__age 18+
+                    
+                    .banner-slider__calc
+                        .calc-loan.calc-loan_sum
+                            .calc-loan__title Сумма займа
+                            label.calc-loan__label
+                                input(type="text").calc-sum__inp
+                                span.symbol-r
+                                span.pen-icon
+                                    
+                            .calc-sum__range  
+                                input(type="text" class="js-range-header")
+                            
+                            ul.calc-loan__min-max
+                                li 10 000 руб.
+                                li 100 000 руб.
+                        .calc-loan.calc-loan_day
+                            .calc-loan__title Срок займа
+                            label.calc-loan__label
+                                input(type="text").calc-day__inp
+                                span.symbol-d Дней
+                                span.pen-icon
+                                
+                            .calc-day__range  
+                                input(type="text" class="day-range-header")
+                                    
+                            ul.calc-loan__min-max
+                                li 1 день
+                                li 24 месяца 
+                        a(href="#").banner__btn Подобрать компании
+                                    
+        .swiper-button-next
+        .swiper-button-prev
+        .swiper-pagination
+
+.statistic.container
+    .statistic__top
+        h2.main-title Сегодня, 24 апреля 2019 микрозаймы онлайн получили:
+        .statistic__social
+            img(src="img/soc.png")
+    
+    ul.statistic__list
+        li
+            a(href="#").statistic__card Займ на карту
+        li
+            a(href="#").statistic__qiwi На Киви кошелек
+        li
+            a(href="#").statistic__sber На Карту Сбербанка
+        li
+            a(href="#").statistic__ym На Яндекс деньги
+        li
+            a(href="#").statistic__maestro На карту Маэстро
+    
+    a(href="#").statistic__btn Смотреть все займы    
+            
+        
 .sentence
     .container
         .sentence__title Для получения микрозайма выберите МФО из списка ниже:

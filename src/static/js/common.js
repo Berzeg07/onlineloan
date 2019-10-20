@@ -26,10 +26,27 @@ $(document).ready(function() {
         });
     });
 
+    $(function() {
+        $(document).click(function(event) {
+            if ($(event.target).closest(".main-nav").length) return;
+            $('.main-nav__inner').slideUp();
+            $('.main-nav__top').removeClass('active');
+            event.stopPropagation();
+        });
+    });
+
     // custom select *
     $('.select-custom select').select2();
 
     var elem = document.querySelector('.js-range');
+    var init = new Powerange(elem, {
+        min: 10000,
+        max: 100000,
+        start: 45000,
+        step: 1000
+    });
+
+    var elem = document.querySelector('.js-range-header');
     var init = new Powerange(elem, {
         min: 10000,
         max: 100000,
@@ -45,18 +62,26 @@ $(document).ready(function() {
         step: 1
     });
 
+    var elemDay = document.querySelector('.day-range-header');
+    var init = new Powerange(elemDay, {
+        min: 1,
+        max: 735,
+        start: 7,
+        step: 1
+    });
+
     function displayValue() {
         $('.calc-sum__inp').val(elem.value);
         $('.calc-day__inp').val(elemDay.value);
-
     }
-
-    elem.onchange = function() {
-        $('.calc-sum__inp').val(elem.value);
-    };
-    elemDay.onchange = function() {
-        $('.calc-day__inp').val(elemDay.value);
-    };
+    //
+    // elem.onchange = function() {
+    //     $('.calc-sum__inp').val(elem.value);
+    // };
+    // elemDay.onchange = function() {
+    //     $('.calc-day__inp').val(elemDay.value);
+    // };
+    //
 
     displayValue();
 
@@ -210,6 +235,23 @@ $(document).ready(function() {
             el: '.swiper-pagination',
             clickable: true,
         },
+    });
+
+
+    banner = new Swiper('.banner-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
     });
 
     loanterm = new Swiper('.loanterm-slider', {
