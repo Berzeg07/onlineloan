@@ -1191,7 +1191,42 @@
                         span
                             img(src="img/fons.png")   
 
-    .container
+    .container.container_credit
+        .credit-cards
+            h2.main-title Кредитные карты
+            .credit-cards__article
+                p Займы представляют собой денежные кредиты, которые оформляются через интернет круглосуточно.<br> Данный вид кредитования является относительно новым в нашей стране, хотя 
+                    a(href="#") онлайн займы 
+                    |по всей России уже стали популярными у населения. 
+                
+                p 
+                    a(href="#") Микрозаймы онлайн 
+                    |предоставляются клиентам взаймы на неотложные потребности многими финансовыми организациями. Каждая из них предлагает свои особенные программы, отличающиеся по условиям, кредитным ставкам, требованиям погашения. При помощи нашего сервиса онлайн получить займ без отказа могут все желающие, заполнив заявку на нашем сайте. Здесь представлен список доступных кредитных организаций. Каталог постоянно пополняется новыми предложениями.
+            
+            ul.bank-tabs
+                li
+                    span Альфа банк
+                li
+                    span Банк Русский Стандарт
+                li
+                    span.active Банк Тинькофф
+                li
+                    span Банк Home кредит
+                li
+                    span Карта рассрочки Совесть
+                li
+                    span Карта Халва
+                li
+                    span Карта Кукуруза
+                li
+                    span Карта рассрочки Совесть
+                li
+                    span Карта Халва
+                li
+                    span Карта Кукуруза
+                li
+                    span Банк Home кредит                 
+            
         .calculate
             .calculate__top
                 span Получите 
@@ -1232,12 +1267,12 @@
                 
                 .calc-res
                     ul
-                        li.calc-res__title К возврату:
+                        li.calc-res__title.calc-res__title_sum К возврату:
                         li 
                             span.calc-res__sum 46700
                             span.calc-res__symbol 
                     ul
-                        li.calc-res__title Процентная ставка:
+                        li.calc-res__title.calc-res__title_proc Процентная ставка:
                         li.calc-res__proc-list
                             span.calc-res__proc 
                                 i 1
@@ -1245,7 +1280,7 @@
                             span.calc-res__day в день
                             
                     ul
-                        li.calc-res__title Дата возврата займа:
+                        li.calc-res__title.calc-res__title_date Дата возврата займа:
                         li.calc-res__list-date
                             span.calc-res__calendar
                             ul.calc-res__date
@@ -1281,7 +1316,7 @@
                         input(type="text" placeholder="Имя")
                     li
                         input(type="text" placeholder="+7 (")
-                    li
+                    li.calc-data__last
                         a(href="#").calc-data__btn Получить микрозайм
                 
                 .check-custom.check-custom_calc
