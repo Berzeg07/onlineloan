@@ -38,7 +38,7 @@ $(document).ready(function() {
     // custom select *
     $('.select-custom select').select2();
 
-    var elem = document.querySelector('.js-range');
+    var elem = document.querySelector('#js-range');
     var init = new Powerange(elem, {
         min: 10000,
         max: 100000,
@@ -46,44 +46,118 @@ $(document).ready(function() {
         step: 1000
     });
 
-    var elem = document.querySelector('.js-range-header');
-    var init = new Powerange(elem, {
-        min: 10000,
-        max: 100000,
-        start: 45000,
-        step: 1000
-    });
+    var elem2 = document.querySelector('#range-header');
+    if (elem2 != null) {
+        var init = new Powerange(elem2, {
+            min: 10000,
+            max: 100000,
+            start: 30000,
+            step: 1000
+        });
+    }
 
-    var elemDay = document.querySelector('.day-range');
+    var elemDay = document.querySelector('#day-range');
     var init = new Powerange(elemDay, {
         min: 1,
         max: 735,
-        start: 735,
+        start: 41,
         step: 1
     });
 
-    var elemDay = document.querySelector('.day-range-header');
-    var init = new Powerange(elemDay, {
-        min: 1,
-        max: 735,
-        start: 7,
-        step: 1
-    });
+    var elemDay2 = document.querySelector('#day-range-header');
+    if (elemDay2 != null) {
+        var init = new Powerange(elemDay2, {
+            min: 1,
+            max: 735,
+            start: 30,
+            step: 1
+        });
+    }
+
+    var daysObj = {
+        Mon: 'Понедельник',
+        Tue: 'Вторник',
+        Wed: 'Среда',
+        Thu: 'Четверг',
+        Fri: 'Пятница',
+        Sat: 'Суббота',
+        Sun: 'Воскресенье'
+    }
+
+    var monthObj = {
+        Jan: 'Января',
+        Feb: 'Февраля',
+        Mar: 'Марта',
+        Apr: 'Апреля',
+        May: 'Мая',
+        Jun: 'Июня',
+        Jul: 'Июля',
+        Aug: 'Августа',
+        Sep: 'Сентября',
+        Oct: 'Октября',
+        Nov: 'Ноября',
+        Dec: 'Декабря'
+    }
+
+    var curent = Date.now();
+
+    function showDate(dayVal) {
+        var daysNum = +dayVal;
+        var future = new Date(curent + daysNum * 24 * 60 * 60 * 1000);
+        $('#resDate').html(future);
+        var str = $('#resDate').html();
+        var arr = str.split(' ');
+        arr.splice(4, 6);
+        var dayArr = arr[0],
+            monthArr = arr[1],
+            numArr = arr[2],
+            yearArr = arr[3];
+        if (numArr.charAt(0) === '0')
+            numArr = numArr.slice(1);
+        var stringInner = `<li>${daysObj[dayArr]}</li><li>${numArr} ${monthObj[monthArr]}, ${yearArr}</li>`
+        $('#resDate').html(stringInner);
+    }
 
     function displayValue() {
-        $('.calc-sum__inp').val(elem.value);
-        $('.calc-day__inp').val(elemDay.value);
+        $('#calcSum').val(elem.value);
+        $('#calcDay').val(elemDay.value);
+        if (elem2 != null) {
+            $('#calcSumHeader').val(elem2.value);
+            $('#calcDayHeader').val(elemDay2.value);
+        }
+        resTotal();
+        var dayInner = $('#calcDay').val();
+        showDate(dayInner);
     }
-    //
-    // elem.onchange = function() {
-    //     $('.calc-sum__inp').val(elem.value);
+
+    function resTotal() {
+        var sum = $('#calcSum').val(),
+            day = $('#calcDay').val(),
+            proc = $('.calc-res__proc i').html(),
+            total = (sum * proc / 100) * +day + +sum;
+        $('#total').html(total);
+    }
+
+    elem.onchange = function() {
+        $('#calcSum').val(elem.value);
+        resTotal();
+    };
+    elemDay.onchange = function() {
+        $('#calcDay').val(elemDay.value);
+        var dayInner = $('#calcDay').val();
+        showDate(dayInner);
+        resTotal();
+    };
+
+    // elem2.onchange = function() {
+    //     $('#calcSumHeader').val(elem2.value);
     // };
-    // elemDay.onchange = function() {
-    //     $('.calc-day__inp').val(elemDay.value);
+    // elemDay2.onchange = function() {
+    //     $('#calcDayHeader').val(elemDay2.value);
     // };
-    //
 
     displayValue();
+
 
     $('.bank-tabs span').click(function() {
         $('.bank-tabs span').removeClass('active');
@@ -242,11 +316,12 @@ $(document).ready(function() {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        simulateTouch: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        
+
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

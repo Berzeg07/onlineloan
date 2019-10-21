@@ -22,6 +22,38 @@ p {
     padding: 0 15px;
 }
 
+.breadcrumbs {
+    background: #FDFBEB;
+    margin: 12px 0 20px;
+    padding: 9px 20px;
+
+    a {
+        font-size: 14px;
+        display: inline-block;
+
+        &:not(:last-child) {
+            color: #969999;
+            border-bottom: 1px dotted #969999;
+            margin-right: 25px;
+            position: relative;
+
+            &:after {
+                content: '/';
+                position: absolute;
+                font-size: 16px;
+                right: -16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid transparent;
+            color: #636363;
+        }
+    }
+}
+
 .main-title {
     font-family: "LetoSans-Bold";
     color: #D41367;
@@ -1386,6 +1418,9 @@ p {
 
 .microloans-org__article {
     margin-bottom: 25px;
+    @media(max-width: 767px) {
+        padding: 0 15px;
+    }
     @media(min-width: 992px) {
         margin-bottom: 42px;
     }
@@ -1393,9 +1428,15 @@ p {
 
 .advantages {
     margin-bottom: 61px;
+    @media(max-width:767px) {
+        padding: 0 15px;
+    }
 
     .main-title {
         margin-bottom: 40px;
+        @media(max-width:767px) {
+            text-align: center;
+        }
     }
 }
 
@@ -1411,6 +1452,9 @@ p {
     color: #333333;
     margin-left: 10px;
     line-height: 24px;
+    @media(max-width: 767px) {
+        font-size: 19px;
+    }
 }
 
 .advantages__img {
@@ -1439,11 +1483,17 @@ p {
 }
 
 .advantages__inner {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    width: 270px;
+    margin: 0 auto;
+    @media(min-width: 768px) {
+        width: auto;
+        margin: 0;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     @media(min-width: 1200px) {
         justify-content: flex-start;
     }
@@ -1454,7 +1504,9 @@ p {
         }
 
         &:not(:last-child) {
-            margin-right: 37px;
+            @media(min-width: 768px) {
+                margin-right: 37px;
+            }
         }
 
         &:first-child {
@@ -1590,6 +1642,9 @@ p {
 
     b {
         font-size: 145px;
+        @media(max-width: 767px) {
+            font-size: 120px;
+        }
     }
 
     i {
@@ -1618,12 +1673,20 @@ p {
             padding-bottom: 16px;
             margin-bottom: 10px;
             border-bottom: 1px solid #F79F1A;
+            @media(max-width: 767px) {
+                font-size: 38px;
+                padding-bottom: 6px;
+                margin-bottom: 1px;
+            }
         }
 
         &:last-child {
             color: #D41367;
             font-size: 46px;
             text-transform: lowercase;
+            @media(max-width: 767px) {
+                font-size: 38px;
+            }
         }
     }
 }
@@ -1643,6 +1706,9 @@ p {
         &:first-child {
             font-size: 32px;
             color: #323E48;
+            @media(max-width: 767px) {
+                font-size: 25px;
+            }
         }
 
         &:last-child {
@@ -1650,6 +1716,9 @@ p {
             font-size: 80px;
             color: #D41367;
             position: relative;
+            @media(max-width: 767px) {
+                font-size: 64px;
+            }
             @media(min-width: 768px) {
                 line-height: 82px;
             }
@@ -1662,6 +1731,10 @@ p {
                 width: 78px;
                 height: 79px;
                 background: url("../img/share.png") no-repeat center;
+                @media(max-width: 767px) {
+                    right: -36px;
+                    bottom: -56px;
+                }
             }
         }
     }
@@ -1697,7 +1770,7 @@ p {
 .request__img {
     position: absolute;
     right: -67px;
-    bottom: 68px;
+    bottom: 0;
     width: 303px;
     z-index: 1;
     @media(min-width: 768px) {
@@ -1847,9 +1920,6 @@ p {
 
 .calculate__main {
     padding: 22px 10px;
-    @media(min-width: 375px) {
-        padding: 22px 30px;
-    }
     @media(min-width: 992px) {
         padding: 22px 53px;
     }
@@ -1941,8 +2011,12 @@ p {
     display: flex;
     justify-content: space-between;
     @media(max-width: 767px) {
-        justify-content: space-around;
-        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+
+        &__item {
+            margin-bottom: 15px;
+        }
 
         ul {
             &:nth-child(2) {
@@ -1957,6 +2031,7 @@ p {
     font-size: 20px;
     margin-bottom: 20px;
     @media(max-width: 767px) {
+        text-align: center;
         margin-bottom: 0;
     }
 }
@@ -2045,9 +2120,11 @@ p {
     color: #333333;
     font-size: 20px;
     margin-left: 20px;
+    width: 185px;
     @media(max-width: 767px) {
         color: #9299A2;
         margin-left: 5px;
+        width: 150px;
 
         li {
             &:first-child {
@@ -2059,6 +2136,19 @@ p {
                 font-family: "LetoSans-Bold";
             }
         }
+    }
+    @media(max-width: 1199px) {
+        font-size: 18px;
+    }
+    @media(min-width: 1200px) {
+        width: 200px;
+    }
+}
+
+.calc-res__li {
+    width: 220px;
+    @media(max-width: 767px) {
+        text-align: center;
     }
 }
 
@@ -2101,6 +2191,12 @@ p {
 
 .calc-select {
     padding-top: 10px;
+
+    li {
+        @media(max-width: 767px) {
+            margin-bottom: 18px;
+        }
+    }
     @media(min-width: 768px) {
         display: -webkit-flex;
         display: -ms-flex;
@@ -2117,6 +2213,11 @@ p {
 .calc-data {
     padding-top: 18px;
     margin-bottom: 24px;
+    @media(max-width: 767px) {
+        li {
+            margin-bottom: 15px;
+        }
+    }
 
     input {
         border: none;
