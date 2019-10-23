@@ -39,12 +39,14 @@ $(document).ready(function() {
     $('.select-custom select').select2();
 
     var elem = document.querySelector('#js-range');
-    var init = new Powerange(elem, {
-        min: 10000,
-        max: 100000,
-        start: 45000,
-        step: 1000
-    });
+    if (elem != null) {
+        var init = new Powerange(elem, {
+            min: 10000,
+            max: 100000,
+            start: 45000,
+            step: 1000
+        });
+    }
 
     var elem2 = document.querySelector('#range-header');
     if (elem2 != null) {
@@ -57,12 +59,14 @@ $(document).ready(function() {
     }
 
     var elemDay = document.querySelector('#day-range');
-    var init = new Powerange(elemDay, {
-        min: 1,
-        max: 735,
-        start: 41,
-        step: 1
-    });
+    if (elemDay != null) {
+        var init = new Powerange(elemDay, {
+            min: 1,
+            max: 735,
+            start: 41,
+            step: 1
+        });
+    }
 
     var elemDay2 = document.querySelector('#day-range-header');
     if (elemDay2 != null) {
@@ -137,19 +141,22 @@ $(document).ready(function() {
             total = (sum * proc / 100) * +day + +sum;
         $('#total').html(total);
     }
+    if (elem != null) {
+        elem.onchange = function() {
+            $('#calcSum').val(elem.value);
+            resTotal();
+        };
 
-    elem.onchange = function() {
-        $('#calcSum').val(elem.value);
-        resTotal();
-    };
-    elemDay.onchange = function() {
-        $('#calcDay').val(elemDay.value);
-        var dayInner = $('#calcDay').val();
-        showDate(dayInner);
-        resTotal();
-    };
+        elemDay.onchange = function() {
+            $('#calcDay').val(elemDay.value);
+            var dayInner = $('#calcDay').val();
+            showDate(dayInner);
+            resTotal();
+        };
+        displayValue();
+    }
 
-    displayValue();
+
 
     $('.bank-tabs span').click(function() {
         $('.bank-tabs span').removeClass('active');
