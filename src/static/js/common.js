@@ -149,15 +149,7 @@ $(document).ready(function() {
         resTotal();
     };
 
-    // elem2.onchange = function() {
-    //     $('#calcSumHeader').val(elem2.value);
-    // };
-    // elemDay2.onchange = function() {
-    //     $('#calcDayHeader').val(elemDay2.value);
-    // };
-
     displayValue();
-
 
     $('.bank-tabs span').click(function() {
         $('.bank-tabs span').removeClass('active');
